@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Light Up 2023</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+</head>
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+    <div class="col-sm-6">
+      <div class="logo_area pt-5 ps-5">
+         <a href="index.html">
+            <img class="logo" src="./assets/images/logo/logo.png" alt="image-not-found">
+         </a>
+      </div>
+   </div>
+		<h1>Light Up 2023</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form id="loginForm" action="#" method="post">
+					<input class="text" id="nama_perusahaan" type="text" name="nama_perusahaan" placeholder="Nama Perusahaan" required>
+          <div class="jumlah_peserta">
+            <p>Jumlah Peserta</p>
+            <div>
+              <input type="radio" id="jumlah_peserta1" name="jumlah_peserta" value="1" onclick="showHiddenOptions()">
+              <label for="jumlah_peserta" class="input-label">1 Orang</label><br>
+            </div>
+            <div>
+              <input type="radio" id="jumlah_peserta2" name="jumlah_peserta" value="2" onclick="showHiddenOptions()">
+              <label for="jumlah_peserta" class="input-label">2 Orang</label><br>
+            </div>
+            <div>
+              <input type="radio" id="jumlah_peserta3" name="jumlah_peserta" value="3" onclick="showHiddenOptions()">
+              <label for="jumlah_peserta" class="input-label">3 Orang</label><br>
+            </div>
+          </div>
+          <input class="text nama_peserta" id="nama_peserta" type="text" name="nama_peserta" placeholder="Nama Peserta" required>
+					<input class="text jabatan_peserta" id="jabatan_peserta" type="text" name="jabatan_peserta" placeholder="Jabatan Peserta" required>
+          <input class="text nama_peserta2" id="nama_peserta2" type="text" name="nama_peserta2" placeholder="Nama Peserta 2" style="display:none">
+					<input class="text jabatan_peserta2" id="jabatan_peserta2" type="text" name="jabatan_peserta2" placeholder="Jabatan Peserta 2" style="display:none">
+          <input class="text nama_peserta3" id="nama_peserta3" type="text" name="nama_peserta3" placeholder="Nama Peserta 3" style="display:none">
+					<input class="text jabatan_peserta3" id="jabatan_peserta3" type="text" name="jabatan_peserta3" placeholder="Jabatan Peserta 3" style="display:none">
+					<input class="text nomor_telp" id="nomor_telp" type="text" name="nomor_telp" placeholder="Nomor yang bisa dihubungi (Perwakilan)" required>
+
+					<input type="submit" value="REGISTER">
+				</form>
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			<p>© 2023 Central Improvement Academy. All rights reserved | Design by <a href="https://ciptainsanaktif.com/" target="_blank">CIA</a></p>
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    let nama_perusahaan = document.getElementById('nama_perusahaan');
+    let jumlah_peserta_options = document.getElementsByName('jumlah_peserta');
+    let jumlah_peserta;
+    let jumlah_peserta1 = document.getElementById('jumlah_peserta1');
+    let jumlah_peserta2 = document.getElementById('jumlah_peserta2');
+    let jumlah_peserta3 = document.getElementById('jumlah_peserta3');
+    let nama_peserta = document.getElementById('nama_peserta');
+    let jabatan_peserta = document.getElementById('jabatan_peserta');
+    let nama_peserta2 = document.getElementById('nama_peserta2');
+    let jabatan_peserta2 = document.getElementById('jabatan_peserta2');
+    let nama_peserta3 = document.getElementById('nama_peserta3');
+    let jabatan_peserta3 = document.getElementById('jabatan_peserta3');
+    let nomor_telp = document.getElementById('nomor_telp');
+    let loginForm = document.getElementById('loginForm');
+
+    function showHiddenOptions() {
+      if (jumlah_peserta1.checked) {
+        nama_peserta2.style.display = "none";
+        jabatan_peserta2.style.display = "none";
+        nama_peserta2.required = false;
+        jabatan_peserta2.required = false;
+        nama_peserta3.style.display = "none";
+        jabatan_peserta3.style.display = "none";
+        nama_peserta3.required = false;
+        jabatan_peserta3.required = false;
+      }
+      if (jumlah_peserta2.checked) {
+        nama_peserta2.style.display = "block";
+        jabatan_peserta2.style.display = "block";
+        nama_peserta2.required = true;
+        jabatan_peserta2.required = true;
+        nama_peserta3.style.display = "none";
+        jabatan_peserta3.style.display = "none";
+        nama_peserta3.required = false;
+        jabatan_peserta3.required = false;
+      }
+      if (jumlah_peserta3.checked) {
+        nama_peserta2.style.display = "block";
+        jabatan_peserta2.style.display = "block";
+        nama_peserta2.required = true;
+        jabatan_peserta2.required = true;
+        nama_peserta3.style.display = "block";
+        jabatan_peserta3.style.display = "block";
+        nama_peserta3.required = true;
+        jabatan_peserta3.required = true;
+      }
+    }
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        for(i = 0; i < jumlah_peserta_options.length; i++) {
+          if(jumlah_peserta_options[i].checked) {
+            jumlah_peserta = jumlah_peserta_options[i].value;
+          }
+        }
+        axios.post('https://anthonygunardi.com:5003/register', {
+          nama_perusahaan: nama_perusahaan.value,
+          jumlah_peserta: jumlah_peserta,
+          nama_peserta: nama_peserta.value,
+          jabatan_peserta: jabatan_peserta.value,
+          nama_peserta2: nama_peserta2.value,
+          jabatan_peserta2: jabatan_peserta2.value,
+          nama_peserta3: nama_peserta3.value,
+          jabatan_peserta3: jabatan_peserta3.value,
+          nomor_telp: nomor_telp.value
+        })
+        .then(result => {
+          window.location.replace('thankyou.html')
+        })
+        .catch(err => console.log(err)) 
+      })
+
+  </script>
+</body>
+</html>
