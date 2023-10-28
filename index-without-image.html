@@ -18,24 +18,12 @@
             <img class="logo" src="./assets/images/logo/logo.png" alt="image-not-found">
          </a>
       </div>
-    </div>
-    <img src="assets/images/background/UI-Light-Up-index.jpeg" width="auto" height="100%" class="centerImg">
-		
+   </div>
+		<h1>Light Up 2023</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
 				<form id="loginForm" action="#" method="post">
-          <div class="sesi_program">
-            <p class="sesi_title">Sesi Program Yang Dipilih</p>
-            <div class="sesi_radio">
-              <input type="radio" id="sesi_program1" name="sesi_program" value="Sesi 1" onclick="showHiddenOptions()">
-              <label for="sesi_program" class="input-label">Sesi 1 : 10.00 - 12.30</label><br>
-            </div>
-            <div>
-              <input type="radio" id="sesi_program2" name="sesi_program" value="Sesi 2" onclick="showHiddenOptions()">
-              <label for="sesi_program" class="input-label">Sesi 2 : 12.30 - 15.00</label><br>
-            </div>
-          </div>
-					<input class="text nama_perusahaan" id="nama_perusahaan" type="text" name="nama_perusahaan" placeholder="Nama Perusahaan" required>
+					<input class="text" id="nama_perusahaan" type="text" name="nama_perusahaan" placeholder="Nama Perusahaan" required>
           <div class="jumlah_peserta">
             <p>Jumlah Peserta</p>
             <div>
@@ -84,8 +72,6 @@
 	<!-- //main -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
-    let sesi_program_options = document.getElementsByName('sesi_program');
-    let sesi_program;
     let nama_perusahaan = document.getElementById('nama_perusahaan');
     let jumlah_peserta_options = document.getElementsByName('jumlah_peserta');
     let jumlah_peserta;
@@ -136,18 +122,12 @@
 
       loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        for(i = 0; i < sesi_program_options.length; i++) {
-          if(sesi_program_options[i].checked) {
-            sesi_program = sesi_program_options[i].value;
-          }
-        }
         for(i = 0; i < jumlah_peserta_options.length; i++) {
           if(jumlah_peserta_options[i].checked) {
             jumlah_peserta = jumlah_peserta_options[i].value;
           }
         }
         axios.post('https://anthonygunardi.com:5003/register', {
-          sesi_program: sesi_program,
           nama_perusahaan: nama_perusahaan.value,
           jumlah_peserta: jumlah_peserta,
           nama_peserta: nama_peserta.value,
